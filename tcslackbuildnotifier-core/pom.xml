@@ -4,10 +4,14 @@
 	<parent>
 		<artifactId>tcslackbuildnotifier</artifactId>
 		<groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
-		<version>${currentVersion}</version>
+		<version>1.4.6</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>tcslackbuildnotifier-core</artifactId>
+
+	<properties>
+		<build.prop.dir>..</build.prop.dir>
+	</properties>
 
 	<build>
 		<defaultGoal>package</defaultGoal>
@@ -83,19 +87,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.0.1</version>
+				<version>2.9</version>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.1</version>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.apache.maven.plugins</groupId>-->
+				<!--<artifactId>maven-javadoc-plugin</artifactId>-->
+				<!--<version>2.1</version>-->
+			<!--</plugin>-->
 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.codehaus.mojo</groupId>-->
+				<!--<artifactId>cobertura-maven-plugin</artifactId>-->
+			<!--</plugin>-->
 
 		</plugins>
 	</reporting>

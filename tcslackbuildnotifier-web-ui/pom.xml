@@ -4,10 +4,13 @@
     <parent>
         <artifactId>tcslackbuildnotifier</artifactId>
         <groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
-        <version>${currentVersion}</version>
         <relativePath>..</relativePath>
+        <version>1.4.6</version>
     </parent>
     <artifactId>tcslackbuildnotifier-web-ui</artifactId>
+    <properties>
+        <build.prop.dir>..</build.prop.dir>
+    </properties>
 
     <build>
         <defaultGoal>package</defaultGoal>
