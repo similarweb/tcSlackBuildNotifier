@@ -170,7 +170,7 @@ public class SlackNotificationPayloadContent {
 			setBuildFullName(buildType.getFullName());
 			setBuildName(buildType.getName());
 			setBuildTypeId(TeamCityIdResolver.getBuildTypeId(buildType));
-			setBuildStatusUrl(server.getRootUrl() + "/viewLog.html?buildTypeId=" + buildType.getBuildTypeId() + "&buildId=lastFinished");
+			setBuildStatusUrl(trimTrailingSlash(server.getRootUrl()) + "/viewLog.html?buildTypeId=" + buildType.getBuildTypeId() + "&buildId=lastFinished");
 
 		}
 		
@@ -215,12 +215,23 @@ public class SlackNotificationPayloadContent {
         } catch (NoSuchMethodError e) {
             Loggers.SERVER.debug("SlackNotificationPayloadContent :: Could not get Branch Info by calling sRunningBuild.getBranch(). Probably an old version of TeamCity");
         }
-        setBuildStatusUrl(server.getRootUrl() + "/viewLog.html?buildTypeId=" + getBuildTypeId() + "&buildId=" + getBuildId());
+        setBuildStatusUrl(trimTrailingSlash(server.getRootUrl()) + "/viewLog.html?buildTypeId=" + getBuildTypeId() + "&buildId=" + getBuildId());
         String branchSuffix = (getBranchIsDefault() != null && getBranchIsDefault()) || getBranchDisplayName() == null ? "" : (" [" + getBranchDisplayName() + "]");
         setBuildDescriptionWithLinkSyntax(String.format("<" + getBuildStatusUrl() + "|" + getBuildResult() + " - " + sRunningBuild.getBuildType().getFullName() + " #" + sRunningBuild.getBuildNumber() + branchSuffix + ">"));
     }
-		
-		
+
+    private String trimTrailingSlash(String value) {
+        if(value == null)
+            return null;
+
+        int len = value.length();
+        int st = 0;
+        while ((st < len) && value.charAt(len - 1) == '/') {
+            len--;
+        }
+        return value.substring(0, len);
+    }
+
 
 		private Branch getBranch() {
 			return this.branch;
