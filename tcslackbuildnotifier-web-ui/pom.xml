@@ -4,10 +4,10 @@
     <parent>
         <artifactId>tcslackbuildnotifier</artifactId>
         <groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
-        <relativePath>..</relativePath>
         <version>1.4.6</version>
     </parent>
     <artifactId>tcslackbuildnotifier-web-ui</artifactId>
+    <packaging>jar</packaging>
     <properties>
         <build.prop.dir>..</build.prop.dir>
     </properties>
@@ -149,16 +149,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
             <artifactId>tcslackbuildnotifier-core</artifactId>
-            <version>${currentVersion}</version>
-            <scope>compile</scope>
+            <groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
         </dependency>
 
         <dependency>
             <groupId>petegoo.teamcity.plugins.tcslacknotifications</groupId>
             <artifactId>tcslackbuildnotifier-core</artifactId>
-            <version>${currentVersion}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
@@ -166,7 +163,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.4</version>
             <scope>test</scope>
         </dependency>
 
@@ -174,7 +170,6 @@
         <dependency>
             <groupId>com.jetbrains.teamcity</groupId>
             <artifactId>server-api</artifactId>
-            <version>8.0.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -182,7 +177,6 @@
         <dependency>
             <groupId>com.jetbrains.teamcity</groupId>
             <artifactId>runtime-util</artifactId>
-            <version>7.1.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -197,70 +191,60 @@
         <dependency>
             <groupId>com.jetbrains.teamcity</groupId>
             <artifactId>common-api</artifactId>
-            <version>8.0.0</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.intellij</groupId>
             <artifactId>openapi</artifactId>
-            <version>7.0.3</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.jetbrains.teamcity</groupId>
             <artifactId>annotations</artifactId>
-            <version>7.1.0</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring</artifactId>
-            <version>2.0.1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.3.1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.jdom</groupId>
             <artifactId>jdom</artifactId>
-            <version>1.1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.8.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.3.5</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-            <version>1.8.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
